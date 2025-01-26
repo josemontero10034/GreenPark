@@ -73,8 +73,8 @@ model VerificationToken {
     @@unique([identifier, token])
 }
 
-model EmployeeCompany {
-    Employeeid                  Int                           @id
+model ShiefEmployeeCompany {
+    ShiefEmployeeId                  Int                           @id
     firstName                   String
     middleName                  String
     lastName                    String
@@ -83,10 +83,22 @@ model EmployeeCompany {
     RegistrationDataInformation RegistrationDataInformation[]
 }
 
+model helperEmployeeCompany{
+    HelperEmployeeId                  Int                           @id
+    firstName                   String
+    middleName                  String
+    lastName                    String
+    IdOrPassport                String                        @unique
+    Ocuppation                  String
+    ShiefEmployeeId             Int  @unique 
+    RegistrationDataInformation RegistrationDataInformation[]
+}
+
 model RegistrationDataInformation {
     Id              Int               @id
-    EmployeeCompany EmployeeCompany[]
-    InHour          DateTime
+    ShiefEmployeeCompanyId  ShiefEmployeeCompany[]
+    helperEmployeeCompanyId helperEmployeeCompany[]
+    InHour          DateTime?
     OutHour         DateTime
     Date            DateTime
 }
