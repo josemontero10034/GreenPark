@@ -72,3 +72,21 @@ model VerificationToken {
 
     @@unique([identifier, token])
 }
+
+model EmployeeCompany {
+    Employeeid                  Int                           @id
+    firstName                   String
+    middleName                  String
+    lastName                    String
+    IdOrPassport                String                        @unique
+    Ocuppation                  String
+    RegistrationDataInformation RegistrationDataInformation[]
+}
+
+model RegistrationDataInformation {
+    Id              Int               @id
+    EmployeeCompany EmployeeCompany[]
+    InHour          DateTime
+    OutHour         DateTime
+    Date            DateTime
+}
