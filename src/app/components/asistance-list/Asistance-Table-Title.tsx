@@ -1,8 +1,9 @@
 import { headAsistanceTitle } from "~/utils/constant";
 import { type TableAsistanceProp } from "./types";
 import { TableRow, TableHead, TableCell } from "@mui/material";
+import { CheckBoxField } from "../common/input";
 
-const AsistanceTableHead = (props: {values:TableAsistanceProp}) => {
+const AttendanceTableHead = (props: {values:TableAsistanceProp}) => {
     const {values} = props
   // the values type should come from prisma
   // const values: TableAsistanceProp = 
@@ -18,28 +19,18 @@ const AsistanceTableHead = (props: {values:TableAsistanceProp}) => {
   // extract name properties from the objet to array values
   const properties = Object.keys(values);
 console.log(values)
-  if(values){
+
 
     return (
       <TableHead>
         <TableRow>
           {properties.map((item) => (
             <TableCell key={item}>{headAsistanceTitle[item]}</TableCell>
-          ))}
+          )).concat( <TableCell key="select"> Seleccionar Todo <CheckBoxField /></TableCell>)}
         </TableRow>
       </TableHead>
     );
-  }
-
-  return (
-    <TableHead>
-      <TableRow>
-        {properties.map((item) => (
-          <TableCell key={item}>{headAsistanceTitle[item]}</TableCell>
-        ))}
-      </TableRow>
-    </TableHead>
-  );
+  
 };
 
-export default AsistanceTableHead;
+export default AttendanceTableHead;

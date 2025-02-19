@@ -6,8 +6,8 @@ import {
   TableCell,
   TableRow,
 } from "@mui/material";
-import AsistanceTableHead from "./Asistance-Table-Title";
-import AsistanceTableInfo from "./asistance-table-info";
+import AttendanceTableHead from "./Asistance-Table-Title";
+import AttendanceTableInfo from "./asistance-table-info";
 import { type TableAsistanceProp } from "./types";
 import { type FC } from "react";
 import {
@@ -15,6 +15,7 @@ import {
   CheckBoxField,
   SearchTextField,
 } from "../common/input";
+import { AddAttendanceButton, DeleteAttendanceButton } from "../common/button";
 
 const valuesFromPrisma: TableAsistanceProp[] = [
   {
@@ -28,11 +29,13 @@ const valuesFromPrisma: TableAsistanceProp[] = [
   },
 ];
 
-const AsistanceInfo: FC = () => {
+const AttendanceInfo: FC = () => {
   return (
     <>
-      <div className="mb-3 flex-col gap-2 w-full">
+      <div className="mb-3 w-full flex-col space-y-3">
+        {/* search bar */}
         <SearchTextField />
+        {/* filters */}
         <div className="flex gap-2">
           {/* filter by department */}
           <AutoCompleteField />
@@ -42,10 +45,14 @@ const AsistanceInfo: FC = () => {
           <CheckBoxField />
           {/* ADD filter by date  */}
         </div>
+        {/* add new asistance */}
+
+        <AddAttendanceButton />
+        <DeleteAttendanceButton />
       </div>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
-          <AsistanceTableHead
+          <AttendanceTableHead
             values={{
               firstLastName: "fddf",
               middleName: "fff",
@@ -56,11 +63,11 @@ const AsistanceInfo: FC = () => {
               secondLastName: "dd",
             }}
           />
-          <AsistanceTableInfo values={valuesFromPrisma} />
+          <AttendanceTableInfo values={valuesFromPrisma} />
         </Table>
       </TableContainer>
     </>
   );
 };
 
-export default AsistanceInfo;
+export default AttendanceInfo;

@@ -1,8 +1,9 @@
 import { TableBody, TableCell, TableRow } from "@mui/material";
 import { type TableAsistanceProp } from "./types";
 import { FC } from "react";
+import { CheckBoxField } from "../common/input";
 
-const AsistanceTableInfo = (prop:{ values:TableAsistanceProp[]} ) => {
+const AttendanceTableInfo = (prop:{ values:TableAsistanceProp[]} ) => {
 
 const {values} = prop
   
@@ -23,10 +24,12 @@ const {values} = prop
           <TableCell align="right">{row.idOrPassport}</TableCell>
           <TableCell align="right">{row.inDate}</TableCell>
           <TableCell align="right">{row.outDate}</TableCell>
+          {/* checkbox to delete or modify */}
+          <TableCell><CheckBoxField/></TableCell>
         </TableRow>
       ))}
     </TableBody>
   );
 };
 
-export default AsistanceTableInfo;
+export default AttendanceTableInfo;

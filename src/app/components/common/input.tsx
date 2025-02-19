@@ -10,7 +10,8 @@ export const AutoCompleteField = () => {
   return (
     <Autocomplete
       disablePortal
-      sx={{ width: 300 }}
+      
+      className="bg-slate-50 w-[300]"
       renderInput={(params) => <TextField {...params} label="Movie" />}
       options={[]}
     />
@@ -20,5 +21,5 @@ export const AutoCompleteField = () => {
 export const CheckBoxField = () => {
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
-  return <Checkbox {...label} />;
+  return <Checkbox className="bg-slate-50" {...label} />;
 };

@@ -1,4 +1,4 @@
-import AsistanceInfo from "~/app/components/asistance-list/asistance-info";
+import AttendanceInfo from "~/app/components/asistance-list/asistance-info";
 import TitleDepartment from "~/app/components/common/title";
 
 
@@ -6,7 +6,7 @@ import TitleDepartment from "~/app/components/common/title";
 const DepartmentShowPage = () => {
 
     return (
-    <><TitleDepartment type={"DOCUMENTACION"} /><AsistanceInfo /></>)
+    <><TitleDepartment type={"DOCUMENTACION"} /><AttendanceInfo /></>)
 }
 
 export default DepartmentShowPage

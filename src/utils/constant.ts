@@ -17,6 +17,6 @@ export const titleDepartmentNameById : Record<DEPARTAMENTOS, string> = {
 
     OBRAS_EXTERIORES: "Obras Exteriores",
     ALMACEN: "Almacen",
-    DOCUMENTACION: "DOCUMENTACION",
-    PANETE_Y_VACIADO: "PAÑETE Y VACIADO"
+    DOCUMENTACION: "Documentacion",
+    PANETE_Y_VACIADO: "Pañete y vaciado"
 }
