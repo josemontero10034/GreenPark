@@ -1,12 +1,12 @@
-import { type FC } from "react"
+import AttendanceInfo from "~/app/components/asistance-list/asistance-info";
+import TitleDepartment from "~/app/components/common/title";
 
-type Props = {
-    title: string;
-  };
 
-const DepartmentShowTablePage: FC<Props> = () => {
 
-    return <div>Aqui va una tabla</div>
+const DepartmentShowPage = () => {
+
+    return (
+    <><TitleDepartment type={"DOCUMENTACION"} /><AttendanceInfo /></>)
 }
 
-export default DepartmentShowTablePage
+export default DepartmentShowPage

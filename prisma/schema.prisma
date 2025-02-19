@@ -14,6 +14,13 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
+enum DEPARTAMENTOS {
+    OBRAS_EXTERIORES 
+    PANETE_Y_VACIADO
+    ALMACEN
+    DOCUMENTACION
+}
+
 model Post {
     id        Int      @id @default(autoincrement())
     name      String
@@ -90,6 +97,7 @@ model helperEmployeeCompany{
     lastName                    String
     IdOrPassport                String                        @unique
     Ocuppation                  String
+    department                  DEPARTAMENTOS  @default(DOCUMENTACION)
     ShiefEmployeeId             Int  @unique 
     RegistrationDataInformation RegistrationDataInformation[]
 }
