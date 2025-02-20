@@ -1,5 +1,5 @@
 import { type TableAsistanceHeadRecord } from "./types";
-import { DEPARTAMENTOS, Prisma,  } from "@prisma/client";
+import { type DEPARTAMENTOS } from "@prisma/client";
 
 
 export const headAsistanceTitle : TableAsistanceHeadRecord = {
